@@ -15,11 +15,11 @@ static PyObject*
 selectivesearch_selectivesearch(PyObject* self, PyObject* args, PyObject* kwargs);
 
 static PyMethodDef module_methods[] = {
-    {"selectivesearch", (PyCFunction)selectivesearch_selectivesearch, METH_VARARGS|METH_KEYWORDS, "Perform selective search on image"},
+    {"_selectivesearch", (PyCFunction)selectivesearch_selectivesearch, METH_VARARGS|METH_KEYWORDS, "Perform selective search on image"},
     {NULL, NULL, 0, NULL}
 };
 
-static struct PyModuleDef spammodule = {
+static struct PyModuleDef module = {
    PyModuleDef_HEAD_INIT,
    "selectivesearch",   /* name of module */
    module_docstring, /* module documentation, may be NULL */
@@ -33,7 +33,7 @@ PyMODINIT_FUNC PyInit__selectivesearch(void)
 {
     /* Load `numpy` functionality. */
     import_array();
-    return PyModule_Create(&spammodule);
+    return PyModule_Create(&module);
 }
 
 static PyObject*

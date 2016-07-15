@@ -1,1 +1,1 @@
-from ._selectivesearch import selectivesearch
+from .selectivesearch import selectivesearch
